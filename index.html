@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maachigan | Digital Artist Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <svg class="cat-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- simple cat face drawing -->
+                <path d="M 20 80 Q 20 30 50 30 Q 80 30 80 80 Z" fill="var(--orange)" />
+                <path d="M 20 50 L 10 20 L 40 40 Z" fill="var(--orange)" />
+                <path d="M 80 50 L 90 20 L 60 40 Z" fill="var(--orange)" />
+                <circle cx="35" cy="55" r="5" fill="#333" />
+                <circle cx="65" cy="55" r="5" fill="#333" />
+                <path d="M 45 65 Q 50 70 55 65" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>Maachigan</span>
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to My Art Corner!</h1>
+                <p>I'm Maachigan, a 2D illustrator exploring warm colors, cozy rooms, and starry skies. Have a look around!</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/hero_cat_1779687807381.png" alt="Orange cat on a rooftop" class="hero-image" />
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>Sketchbook & Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/gallery_1_1779687843270.png" alt="Warm sunset landscape illustration">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery_2_1779687862388.png" alt="Cozy room interior with plants and cat">
+                </div>
+                <!-- Some extra placeholders to show grid -->
+                <div class="gallery-item placeholder-art">
+                    <span>Art #3</span>
+                </div>
+                <div class="gallery-item placeholder-art">
+                    <span>Art #4</span>
+                </div>
+                <div class="gallery-item placeholder-art">
+                    <span>Art #5</span>
+                </div>
+                <div class="gallery-item placeholder-art">
+                    <span>Art #6</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-card">
+                <div class="about-avatar">
+                    <img src="assets/profile_avatar_1779687824621.png" alt="Maachigan profile avatar">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm a digital artist who loves capturing quiet, cozy moments. My work is inspired by everyday life, sleepy cats, and the magical feeling of a twilight sky.</p>
+                    <p>I usually draw on my tablet while my own orange cat naps on my keyboard.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="signpost">
+            <h2>Say Hello!</h2>
+            <p>Interested in commissions or just want to chat?</p>
+            <div class="contact-links">
+                <a href="#" class="contact-btn email-btn">Email Me</a>
+                <a href="https://instagram.com/maachigan" class="contact-btn insta-btn">Instagram @maachigan</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Maachigan. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
