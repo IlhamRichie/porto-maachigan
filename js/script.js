@@ -55,13 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="modal-close">&times;</span>
         <div class="modal-content-wrapper">
             <img class="modal-content" src="" alt="Modal Image">
-            <div class="modal-story"></div>
         </div>
     `;
     document.body.appendChild(modal);
 
     const modalImg = modal.querySelector('.modal-content');
-    const modalStory = modal.querySelector('.modal-story');
     const closeModal = modal.querySelector('.modal-close');
     
     // Disable right-click on the image inside the modal
@@ -73,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         img.addEventListener('click', () => {
             modalImg.src = img.src;
-            // Use custom story if exists, otherwise a generic warm message
-            const story = img.getAttribute('data-story');
-            modalStory.textContent = story ? story : "Sebuah karya seni digital yang dibuat dengan penuh kehangatan dan inspirasi. Menangkap momen kecil yang berharga.";
             
             // Show modal with a tiny delay to allow display:flex to apply before opacity transition
             modal.style.display = 'flex';
