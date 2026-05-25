@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = modal.querySelector('.modal-content');
     const modalStory = modal.querySelector('.modal-story');
     const closeModal = modal.querySelector('.modal-close');
+    
+    // Disable right-click on the image inside the modal
+    modalImg.addEventListener('contextmenu', e => e.preventDefault());
 
     // Add click event to gallery items and hero image
     document.querySelectorAll('.gallery-item img, .hero-image').forEach(img => {
