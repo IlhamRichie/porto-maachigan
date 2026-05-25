@@ -40,3 +40,61 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Disable Right Click & Image Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    // Disable right click on all images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('contextmenu', e => e.preventDefault());
+    });
+
+    // Create Modal Elements
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <span class="modal-close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" src="" alt="Modal Image">
+            <div class="modal-story"></div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalImg = modal.querySelector('.modal-content');
+    const modalStory = modal.querySelector('.modal-story');
+    const closeModal = modal.querySelector('.modal-close');
+
+    // Add click event to gallery items and hero image
+    document.querySelectorAll('.gallery-item img, .hero-image').forEach(img => {
+        img.style.cursor = 'pointer'; // Make sure they look clickable
+        
+        img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            // Use custom story if exists, otherwise a generic warm message
+            const story = img.getAttribute('data-story');
+            modalStory.textContent = story ? story : "Sebuah karya seni digital yang dibuat dengan penuh kehangatan dan inspirasi. Menangkap momen kecil yang berharga.";
+            
+            // Show modal with a tiny delay to allow display:flex to apply before opacity transition
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        });
+    });
+
+    // Close Modal Logic
+    const closeFunc = () => {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300); // Wait for transition
+    };
+
+    closeModal.addEventListener('click', closeFunc);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === modal.querySelector('.modal-content-wrapper')) {
+            closeFunc();
+        }
+    });
+});
