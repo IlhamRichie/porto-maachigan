@@ -95,4 +95,35 @@ document.addEventListener('DOMContentLoaded', () => {
             closeFunc();
         }
     });
+
+    // --- ANIMATIONS ON SCROLL ---
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Apply animation classes to elements
+    const fadeUpElements = [
+        document.querySelector('.hero-content'),
+        document.querySelector('.hero-image-container'),
+        document.querySelector('.about-card'),
+        document.querySelector('.signpost'),
+        ...document.querySelectorAll('.gallery-item')
+    ];
+
+    fadeUpElements.forEach(el => {
+        if (el) {
+            el.classList.add('fade-up');
+            observer.observe(el);
+        }
+    });
 });

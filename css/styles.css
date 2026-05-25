@@ -16,6 +16,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-creamy);
     color: var(--text-color);
@@ -355,21 +359,64 @@ a {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 1.1rem;
+        padding: 5px 10px;
+    }
+
     .hero-section {
         flex-direction: column;
         text-align: center;
         gap: 40px;
         padding-top: 40px;
+        padding-bottom: 40px;
     }
     
     .about-card {
         flex-direction: column;
         text-align: center;
     }
-    
-    .nav {
-        display: none; /* simple mobile hide for now, or could use hamburger */
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 3rem;
     }
+    .hero-image {
+        width: 100%;
+        max-width: 350px;
+    }
+    .gallery-section {
+        padding: 40px 5%;
+    }
+    .about-section {
+        padding: 60px 5%;
+    }
+}
+
+/* --- ANIMATIONS --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- MODAL IMAGE --- */
