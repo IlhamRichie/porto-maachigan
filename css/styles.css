@@ -285,6 +285,27 @@ a {
     margin-bottom: 15px;
 }
 
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--bg-creamy);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    border: 3px solid var(--brown);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cv-btn:hover {
+    background-color: var(--orange-dark);
+    transform: rotate(-2deg) scale(1.05);
+    box-shadow: 4px 4px 0px var(--brown);
+}
+
 /* --- FOOTER / CONTACT --- */
 .footer-section {
     padding: 80px 10% 40px;
